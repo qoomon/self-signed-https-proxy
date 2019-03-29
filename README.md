@@ -10,7 +10,7 @@
 Generate self-signed certificate for given `SERVER_DOMAIN` on the fly and starts a proxy https server.
 
 ### build
-`docker build -t localhost-ssl-proxy .`
+`docker build -t self-signed-https-proxy .`
 
 ### Usage
 `docker run -p 443:443 self-signed-https-proxy`
