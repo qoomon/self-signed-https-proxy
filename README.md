@@ -1,5 +1,12 @@
 # self-signed-https-proxy
 
+[![Build Status](https://travis-ci.com/qoomon/self-signed-https-proxy.svg?branch=master)](https://travis-ci.com/qoomon/self-signed-https-proxy)
+
+[![GitHub release](https://img.shields.io/github/release/qoomon/self-signed-https-proxy.svg)](https://hub.docker.com/r/qoomon/self-signed-https-proxy/)
+
+[![Docker Stars](https://img.shields.io/docker/pulls/qoomon/self-signed-https-proxy.svg)](https://hub.docker.com/r/qoomon/self-signed-https-proxy/)
+
+
 Generate self-signed certificate for given `SERVER_DOMAIN` on the fly and starts a proxy https server.
 
 ### build
