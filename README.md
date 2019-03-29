@@ -1,4 +1,4 @@
-# localhost-https-proxy
+# self-signed-https-proxy
 
 Generate self-signed certificate for given `SERVER_DOMAIN` on the fly and starts a proxy https server.
 
@@ -6,10 +6,10 @@ Generate self-signed certificate for given `SERVER_DOMAIN` on the fly and starts
 `docker build -t localhost-ssl-proxy .`
 
 ### Usage
-`docker run -p 443:443 localhost-ssl-proxy`
+`docker run -p 443:443 self-signed-https-proxy`
 
 #### Mount local directory to store and reuse certificate and key
-`docker run -v "$PWD":'/etc/nginx/certificates' -p 443:443 localhost-ssl-proxy`
+`docker run -v "$PWD":'/etc/nginx/certificates' -p 443:443 self-signed-https-proxy`
 
 ### Environment Variables
 * `SERVER_DOMAIN` default: 'localtest.me'
