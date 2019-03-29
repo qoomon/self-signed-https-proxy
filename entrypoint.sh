@@ -6,13 +6,10 @@ TARGET_PORT=${TARGET_PORT:-'80'}
 
 target_address="$TARGET_DOMAIN"
 # resolve localhost to dockerhost
-echo "target_address $target_address"
 if [ "$(dig "$TARGET_DOMAIN" +short)" == "127.0.0.1" ]; then
   target_address="$(getent hosts host.docker.internal | cut -d' ' -f1)"
-  echo "target_address $target_address"
   if [ ! "$target_address" ]; then
     target_address=$(ip -4 route show default | cut -d' ' -f3)
-    echo "target_address $target_address"
   fi
 fi
 
@@ -38,6 +35,7 @@ EOL
 
 openssl genrsa -out "/etc/nginx/certificates/${SERVER_DOMAIN}.key" 2048
 openssl req -x509 -new -key "/etc/nginx/certificates/${SERVER_DOMAIN}.key" \
+  -subj "/CN=${SERVER_DOMAIN}" \
   -sha256 -nodes -config "$temp_certificate_conf" \
   -out "/etc/nginx/certificates/${SERVER_DOMAIN}.crt"
 
