@@ -2,7 +2,7 @@
 server_domain='localtest.me'
 server_port='443'
 target_domain="$server_domain"
-target_port='8080'
+target_port='80'
 
 target_address="$target_domain"
 # resolve localhost to dockerhost
